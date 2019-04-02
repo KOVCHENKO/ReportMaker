@@ -8,10 +8,10 @@ from email.mime.multipart import MIMEMultipart
 from git import Repo
 from datetime import datetime, timedelta
 
-from settings import mail_login, git_receiver, git_cc, smtp_server, mail_passwd
+from settings.settings import mail_login, git_receiver, git_cc, smtp_server, mail_passwd
 
 
-def main():
+def git_report():
 
     repos = json.load(open('./git_report/repos.json'))
 
@@ -67,6 +67,4 @@ def main():
     smtp.sendmail(mail_login, tosend, msg.as_string())
     smtp.quit()
 
-if __name__ == '__main__':
-    main()
 

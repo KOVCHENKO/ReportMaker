@@ -14,7 +14,7 @@ from email.mime.base import MIMEBase
 from email import encoders
 import datetime
 
-from settings import host, user, passwd, db, port, smtp_server, mail_login, mail_passwd, receiver, cc
+from settings.settings import host, user, passwd, db, port, smtp_server, mail_login, mail_passwd, receiver, cc
 
 # Excel Settings
 today = datetime.date.today().strftime('%d.%m.%Y')
@@ -24,7 +24,7 @@ headers = ['id', 'email', 'Контрагент', 'Тариф', 'дата опл
            'тип оплаты']
 
 
-def main():
+def user_report():
     # Fetch Data from SQL server
     conn = pymysql.connect(host=host, user=user, passwd=passwd, db=db, port=port)
     cursor = conn.cursor()
@@ -98,7 +98,3 @@ def main():
 
     # Wipe file
     os.remove(excel_file)
-
-
-if __name__ == '__main__':
-    main()
