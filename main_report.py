@@ -13,8 +13,7 @@ def make_report(report_type):
     try:
         report_types[report_type]()
     except KeyError as e:
-        # можно также присвоить значение по умолчанию вместо бросания исключения
-        raise ValueError('Undefined unit: {}'.format(e.args[0]))
+        raise ValueError('Undefined report type: {}'.format(e.args[0]))
 
 
 if __name__ == '__main__':

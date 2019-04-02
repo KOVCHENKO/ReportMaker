@@ -1,0 +1,14 @@
+---Система токенов для просмотра системы видеонаблюдения---
+feat(check_ip util. function for check_if_ip_address_is_allowed)
+feat(search_for_token method in token_repository)
+feat(flussecure.db has been returned)
+del(dlussecure.db) and appended to gitignore
+upd(pychache .gitignore)
+feat(user model, token repository)
+feat(webserver.py has been divided into other several files)
+
+---Основная система видеонаблюдения---
+fix(timestamps of different days should be transfered to necessary days)
+
+---Система формирования отчетности---
+

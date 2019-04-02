@@ -1,12 +1,3 @@
-# -------------------------------------------------------------------------------
-# Name:        User_Payments
-# Purpose:
-#
-# Author:      ITSG
-#
-# Created:     27.02.2019
-# Copyright:   (c) ITSG 2019
-# -------------------------------------------------------------------------------
 import openpyxl, pymysql, os
 from smtplib import SMTP_SSL
 from email.mime.multipart import MIMEMultipart
