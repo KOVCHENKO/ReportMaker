@@ -1,18 +1,26 @@
+import json
+
 from git import Repo
 from datetime import datetime, timedelta
 
-repo = Repo("C:/My/Work/projects/video/flussecure")
-now = datetime.now()
+repos = json.load(open('./git_report/repos.json'))
 
-commits = list(repo.iter_commits())
+for single_repo in repos:
 
-for commit in commits:
+    print(single_repo['name'])
 
-    ts = int(commit.committed_date)
-    commit_date = datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d')
-    today = now.strftime("%Y-%m-%d")
+    repo = Repo(single_repo['path'])
+    now = datetime.now()
 
-    d = datetime.today() - timedelta(days=1)
+    commits = list(repo.iter_commits())
 
-    if (commit_date == d.strftime("%Y-%m-%d")):
-        print(commit.author, commit.message)
+    for commit in commits:
+
+        ts = int(commit.committed_date)
+        commit_date = datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d')
+        today = now.strftime("%Y-%m-%d")
+
+        d = datetime.today() - timedelta(days=1)
+
+        if (commit_date == d.strftime("%Y-%m-%d")):
+            print(commit.author, commit.message)

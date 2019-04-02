@@ -1,1 +1,10 @@
-"C:/My/Work/projects/video/flussecure"
+[
+  {
+    "name": "Система тоекнов для просмотра системы видеонаблюдения",
+    "path": "C:/My/Work/projects/video/flussecure"
+  },
+  {
+    "name": "Основная система видеонаблюдения",
+    "path": "C:/My/Work/OSPanel/domains/video"
+  }
+]
