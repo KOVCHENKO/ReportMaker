@@ -1,6 +1,7 @@
 FROM python:3.4
-ADD ./user_report.py /
+ADD ./main_report.py /
 RUN pip install openpyxl
 RUN pip install pymysql
 RUN ls -al
-CMD python report.py
+CMD python main_report.py users
+CMD python main_report.py git
