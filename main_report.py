@@ -1,7 +1,7 @@
 import sys
 
 from git_report.git_report import git_report
-from user_report.user_report import user_report
+from excel_reports.user_report import user_report
 
 report_types = {
     'users': user_report,
