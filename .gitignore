@@ -1,3 +1,4 @@
 .idea/
 __pycache__
 settings/settings.py
+git_report/daily_report.txt
