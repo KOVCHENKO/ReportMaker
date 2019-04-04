@@ -7,6 +7,9 @@ from git_report.email_sender import send_mail
 
 
 # Make report from different repos
+from git_report.faker.faker_service import make_fake_commit
+
+
 def git_report():
     repos = json.load(open('./git_report/repos.json'))
 
@@ -22,7 +25,9 @@ def git_report():
 
 # Get commits for one day of single repo
 def get_repo_commits(single_repo, f):
-    print(single_repo['name'])
+    is_there_commits = False
+
+    # print(single_repo['name'])
     f.write(str(single_repo['name']))
     f.write(str("\n"))
 
@@ -38,8 +43,12 @@ def get_repo_commits(single_repo, f):
         d = datetime.today() - timedelta(days=1)
 
         if commit_date == d.strftime("%Y-%m-%d"):
-            print(commit.author, commit.message)
+            is_there_commits = True
+            # print(commit.author, commit.message)
 
             f.write(str(commit.message))
 
     f.write(str("\n"))
+
+    if not is_there_commits:
+        make_fake_commit(single_repo)

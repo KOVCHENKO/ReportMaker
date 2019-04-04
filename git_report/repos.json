@@ -1,14 +1,17 @@
 [
   {
     "name": "---—истема токенов дл€ просмотра системы видеонаблюдени€---",
-    "path": "C:/My/Work/projects/video/flussecure"
+    "path": "C:/My/Work/projects/video/flussecure",
+    "key_words": ["токен", "безопасность", "видеонаблюдение"]
   },
   {
     "name": "---ќсновна€ система видеонаблюдени€---",
-    "path": "C:/My/Work/OSPanel/domains/video"
+    "path": "C:/My/Work/OSPanel/domains/video",
+    "key_words": ["видеонаблюдение", "система", "родитель", "руководитель образовательной организации", "администратор"]
   },
   {
     "name": "---—истема формировани€ отчетности---",
-    "path": "C:/My/Work/projects/video/email.reporting"
+    "path": "C:/My/Work/projects/video/email.reporting",
+    "key_words": ["отчетность", "почта"]
   }
 ]
