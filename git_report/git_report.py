@@ -16,6 +16,7 @@ def git_report():
 
     for single_repo in repos:
         get_repo_commits(single_repo, f)
+        f.write(str("\n"))
 
     f.close()
 
@@ -45,7 +46,7 @@ def get_repo_commits(single_repo, f):
 
             f.write(str(commit.message))
 
-    f.write(str("\n"))
-
     if not is_there_commits:
-        make_fake_commit(single_repo)
+        f.write(make_fake_commit(single_repo))
+
+    f.write(str("\n"))

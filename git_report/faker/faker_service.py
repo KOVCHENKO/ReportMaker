@@ -1,5 +1,5 @@
 # Make fake commit if there is no real
-from random import random
+from random import randint
 
 
 # TODO: add real committing of this messages
@@ -7,42 +7,41 @@ def make_fake_commit(single_repo):
     commit_actions = [{
         "type": "feat",
         "messages": [
-            "базовый фукнционал для работы",
-            "еще функционал для работы",
+            "Added another dependency",
+            "Final commit, ready for tagging",
         ]}, {
         "type": "fix",
         "messages": [
-            "починил",
-            "не починил"
+            "This Is Why We Don't Push To Production On Fridays",
+            "Something fixed"
         ]}, {
         "type": "docs",
         "messages": [
-            "задокументировано",
-            "не задокументировано"
+            "Documented new module of code",
+            "Code has been documented"
         ]}, {
         "type": "refactor",
         "messages": [
-            "отрефакторено",
-            "не отрефакторено"
+            "Now added delete for real",
+            "Added some NullPointerExceptions"
         ]}, {
         "type": "test",
         "messages": [
-            "оттестировано",
-            "не оттестировано"
+            "Revert 'just testing, remember to revert'",
+            "Testing in progress"
         ]
     }]
 
-    # Записывать рандомную инфу
-    random_action = random.randint(0, 3)
-    print(random_action)
+    # Record random commit info action
+    random_action = randint(0, len(commit_actions) - 1)
+    commit_random_action = commit_actions[random_action]["type"]
 
-    commit_modules = single_repo['key_words']
+    # Record random commit info message
+    random_message = randint(0, len(commit_actions[random_action]["messages"]) - 1)
+    commit_random_message = commit_actions[random_action]["messages"][random_message]
 
-    random_commit_action = commit_actions[1]
+    # Choose random module name
+    random_commit_module = randint(0, len(single_repo['key_words']) - 1)
+    commit_module_name = single_repo['key_words'][random_commit_module]
 
-    for num, commit_action in enumerate(commit_actions):
-
-        commit_action["type"] = "type"
-
-        for commit_message in commit_action["messages"]:
-            commit_message = 1
+    return "%s (%s) %s" % (commit_random_action, commit_module_name, commit_random_message)
