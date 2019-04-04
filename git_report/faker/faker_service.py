@@ -1,4 +1,8 @@
 # Make fake commit if there is no real
+from random import random
+
+
+# TODO: add real committing of this messages
 def make_fake_commit(single_repo):
     commit_actions = [{
         "type": "feat",
@@ -28,22 +32,17 @@ def make_fake_commit(single_repo):
         ]
     }]
 
+    # Записывать рандомную инфу
+    random_action = random.randint(0, 3)
+    print(random_action)
+
     commit_modules = single_repo['key_words']
 
     random_commit_action = commit_actions[1]
-    print(random_commit_action["type"])
-    print(random_commit_action["messages"])
 
     for num, commit_action in enumerate(commit_actions):
 
         commit_action["type"] = "type"
 
         for commit_message in commit_action["messages"]:
-
             commit_message = 1
-
-
-    # TODO: add real committing of this messages
-    # print(commit_actions)
-
-    # print(single_repo['key_words'])

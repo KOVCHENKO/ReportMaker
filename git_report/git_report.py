@@ -5,7 +5,6 @@ from datetime import datetime, timedelta
 
 from git_report.email_sender import send_mail
 
-
 # Make report from different repos
 from git_report.faker.faker_service import make_fake_commit
 
@@ -27,7 +26,6 @@ def git_report():
 def get_repo_commits(single_repo, f):
     is_there_commits = False
 
-    # print(single_repo['name'])
     f.write(str(single_repo['name']))
     f.write(str("\n"))
 
@@ -44,7 +42,6 @@ def get_repo_commits(single_repo, f):
 
         if commit_date == d.strftime("%Y-%m-%d"):
             is_there_commits = True
-            # print(commit.author, commit.message)
 
             f.write(str(commit.message))
 
