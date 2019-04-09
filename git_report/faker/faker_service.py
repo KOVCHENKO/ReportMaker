@@ -1,36 +1,11 @@
 # Make fake commit if there is no real
+import json
 from random import randint
 
 
 # TODO: add real committing of this messages
 def make_fake_commit(single_repo):
-    commit_actions = [{
-        "type": "feat",
-        "messages": [
-            "Added another dependency",
-            "Final commit, ready for tagging",
-        ]}, {
-        "type": "fix",
-        "messages": [
-            "This Is Why We Don't Push To Production On Fridays",
-            "Something fixed"
-        ]}, {
-        "type": "docs",
-        "messages": [
-            "Documented new module of code",
-            "Code has been documented"
-        ]}, {
-        "type": "refactor",
-        "messages": [
-            "Now added delete for real",
-            "Added some NullPointerExceptions"
-        ]}, {
-        "type": "test",
-        "messages": [
-            "Revert 'just testing, remember to revert'",
-            "Testing in progress"
-        ]
-    }]
+    commit_actions = json.load(open('./git_report/faker/faker.json'))
 
     # Record random commit info action
     random_action = randint(0, len(commit_actions) - 1)

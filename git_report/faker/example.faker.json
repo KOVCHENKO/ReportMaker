@@ -1,0 +1,27 @@
+[{
+  "type": "feat",
+  "messages": [
+      "Added another dependency",
+      "Final commit, ready for tagging"
+  ]}, {
+  "type": "fix",
+  "messages": [
+      "This Is Why We Don't Push To Production On Fridays",
+      "Something fixed"
+  ]}, {
+  "type": "docs",
+  "messages": [
+      "Documented new module of code",
+      "Code has been documented"
+  ]}, {
+  "type": "refactor",
+  "messages": [
+      "Now added delete for real",
+      "Added some NullPointerExceptions"
+  ]}, {
+  "type": "test",
+  "messages": [
+      "Revert 'just testing, remember to revert'",
+      "Testing in progress"
+  ]
+}]
